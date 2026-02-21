@@ -1,0 +1,84 @@
+{
+  "agent_name": "Deadline & Goals Tracker Agent",
+  "agent_id": "6999627f2361782dde9da339",
+  "description": "Reviews upcoming deadlines, sends proactive reminders, tracks academic goal progress, and provides balance insights between studies and business",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "upcoming_deadlines": [
+      {
+        "subject": "string",
+        "deadline": "string",
+        "days_remaining": "number",
+        "urgency": "string",
+        "action_needed": "string",
+        "completion_percentage": "number"
+      }
+    ],
+    "goal_progress": {
+      "overall_academic_progress": "number",
+      "weekly_completion_rate": "number",
+      "balance_score": "number",
+      "subjects_at_risk": [
+        "string"
+      ]
+    },
+    "reminders": [
+      {
+        "title": "string",
+        "message": "string",
+        "urgency": "string",
+        "due_date": "string"
+      }
+    ],
+    "insights": [
+      {
+        "type": "string",
+        "message": "string"
+      }
+    ],
+    "balance_analysis": "string",
+    "recommendations": [
+      "string"
+    ]
+  },
+  "example_response": {
+    "upcoming_deadlines": [
+      {
+        "subject": "sample string",
+        "deadline": "sample string",
+        "days_remaining": 0,
+        "urgency": "sample string",
+        "action_needed": "sample string",
+        "completion_percentage": 0
+      }
+    ],
+    "goal_progress": {
+      "overall_academic_progress": 0,
+      "weekly_completion_rate": 0,
+      "balance_score": 0,
+      "subjects_at_risk": [
+        "sample string"
+      ]
+    },
+    "reminders": [
+      {
+        "title": "sample string",
+        "message": "sample string",
+        "urgency": "sample string",
+        "due_date": "sample string"
+      }
+    ],
+    "insights": [
+      {
+        "type": "sample string",
+        "message": "sample string"
+      }
+    ],
+    "balance_analysis": "sample string",
+    "recommendations": [
+      "sample string"
+    ]
+  }
+}

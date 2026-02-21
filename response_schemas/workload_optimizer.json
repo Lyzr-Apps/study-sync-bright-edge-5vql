@@ -1,0 +1,32 @@
+{
+  "agent_name": "Workload Optimizer Agent",
+  "agent_id": "6999624472a2e3b0eaab97a8",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "priority_ranking": [
+      {
+        "subject": "string",
+        "urgency_score": "number",
+        "difficulty": "number",
+        "priority_score": "number",
+        "recommended_hours_per_week": "number",
+        "rationale": "string"
+      }
+    ],
+    "focus_blocks": [
+      {
+        "subject": "string",
+        "recommended_time_of_day": "string",
+        "duration_minutes": "number",
+        "energy_level_required": "string",
+        "focus_tips": "string",
+        "day_preference": "string"
+      }
+    ],
+    "balance_score": "number",
+    "workload_summary": "string",
+    "optimization_notes": "string"
+  }
+}

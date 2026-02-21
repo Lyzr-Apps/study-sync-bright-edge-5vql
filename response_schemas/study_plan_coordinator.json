@@ -1,0 +1,36 @@
+{
+  "agent_name": "Study Plan Coordinator",
+  "agent_id": "6999627e72a2e3b0eaab97be",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "week_start": "string",
+    "week_end": "string",
+    "study_blocks": [
+      {
+        "id": "string",
+        "subject": "string",
+        "day": "string",
+        "start_time": "string",
+        "end_time": "string",
+        "duration_minutes": "number",
+        "difficulty": "number",
+        "energy_match": "string",
+        "focus_tips": "string",
+        "calendar_event_created": "boolean"
+      }
+    ],
+    "total_study_hours": "number",
+    "subjects_covered": [
+      {
+        "subject": "string",
+        "hours_allocated": "number",
+        "sessions_count": "number"
+      }
+    ],
+    "balance_score": "number",
+    "plan_summary": "string",
+    "recommendations": ["string"]
+  }
+}

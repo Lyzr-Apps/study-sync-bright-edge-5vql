@@ -1,0 +1,30 @@
+{
+  "agent_name": "Calendar Analyzer Agent",
+  "agent_id": "69996257deebc613f158650f",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "available_slots": [
+      {
+        "day": "string",
+        "start_time": "string",
+        "end_time": "string",
+        "duration_minutes": "number",
+        "time_of_day": "string",
+        "quality_score": "number"
+      }
+    ],
+    "conflicts_detected": [
+      {
+        "event_name": "string",
+        "time": "string",
+        "conflict_type": "string"
+      }
+    ],
+    "total_available_hours": "number",
+    "busiest_day": "string",
+    "most_free_day": "string",
+    "summary": "string"
+  }
+}

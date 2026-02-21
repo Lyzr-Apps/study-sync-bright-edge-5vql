@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {"id": "input_node", "type": "Input", "label": "User Study Input", "nodeCategory": "input"},
+    {"id": "study_plan_coordinator", "type": "Agent", "label": "Study Plan Coordinator", "nodeCategory": "agent"},
+    {"id": "calendar_analyzer", "type": "Agent", "label": "Calendar Analyzer Agent", "nodeCategory": "agent"},
+    {"id": "workload_optimizer", "type": "Agent", "label": "Workload Optimizer Agent", "nodeCategory": "agent"},
+    {"id": "deadline_goals_tracker", "type": "Agent", "label": "Deadline & Goals Tracker", "nodeCategory": "agent"},
+    {"id": "output_node", "type": "Output", "label": "Study Plan Output", "nodeCategory": "end"}
+  ],
+  "edges": [
+    {"source": "input_node", "target": "study_plan_coordinator"},
+    {"source": "study_plan_coordinator", "target": "calendar_analyzer"},
+    {"source": "study_plan_coordinator", "target": "workload_optimizer"},
+    {"source": "input_node", "target": "deadline_goals_tracker"},
+    {"source": "study_plan_coordinator", "target": "output_node"},
+    {"source": "deadline_goals_tracker", "target": "output_node"}
+  ],
+  "agents": {
+    "calendar_analyzer": {
+      "agent_id": "69996257deebc613f158650f",
+      "name": "Calendar Analyzer Agent",
+      "type": "sub-agent",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "tools": ["GOOGLECALENDAR_LIST_CALENDARS", "GOOGLECALENDAR_FIND_FREE_SLOTS", "GOOGLECALENDAR_FIND_EVENT"]
+    },
+    "workload_optimizer": {
+      "agent_id": "6999624472a2e3b0eaab97a8",
+      "name": "Workload Optimizer Agent",
+      "type": "sub-agent",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.4,
+      "tools": []
+    },
+    "study_plan_coordinator": {
+      "agent_id": "6999627e72a2e3b0eaab97be",
+      "name": "Study Plan Coordinator",
+      "type": "manager",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "tools": ["GOOGLECALENDAR_CREATE_EVENT"],
+      "managed_agents": ["69996257deebc613f158650f", "6999624472a2e3b0eaab97a8"]
+    },
+    "deadline_goals_tracker": {
+      "agent_id": "6999627f2361782dde9da339",
+      "name": "Deadline & Goals Tracker Agent",
+      "type": "independent",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "tools": ["GOOGLECALENDAR_FIND_EVENT", "GOOGLECALENDAR_LIST_EVENTS"],
+      "schedule": {
+        "schedule_id": "69996287399dfadeac37e2c6",
+        "cron_expression": "0 8 * * *",
+        "timezone": "America/New_York"
+      }
+    }
+  }
+}

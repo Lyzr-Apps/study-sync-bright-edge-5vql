@@ -1,0 +1,41 @@
+{
+  "agent_name": "Deadline & Goals Tracker Agent",
+  "agent_id": "6999627f2361782dde9da339",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "upcoming_deadlines": [
+      {
+        "subject": "string",
+        "deadline": "string",
+        "days_remaining": "number",
+        "urgency": "string",
+        "action_needed": "string",
+        "completion_percentage": "number"
+      }
+    ],
+    "goal_progress": {
+      "overall_academic_progress": "number",
+      "weekly_completion_rate": "number",
+      "balance_score": "number",
+      "subjects_at_risk": ["string"]
+    },
+    "reminders": [
+      {
+        "title": "string",
+        "message": "string",
+        "urgency": "string",
+        "due_date": "string"
+      }
+    ],
+    "insights": [
+      {
+        "type": "string",
+        "message": "string"
+      }
+    ],
+    "balance_analysis": "string",
+    "recommendations": ["string"]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "agent_name": "Study Plan Coordinator",
+  "agent_id": "6999627e72a2e3b0eaab97be",
+  "description": "Coordinates calendar analysis and workload optimization sub-agents, aggregates results into a consolidated weekly study plan, and creates calendar events for study blocks",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "week_start": "string",
+    "week_end": "string",
+    "study_blocks": [
+      {
+        "id": "string",
+        "subject": "string",
+        "day": "string",
+        "start_time": "string",
+        "end_time": "string",
+        "duration_minutes": "number",
+        "difficulty": "number",
+        "energy_match": "string",
+        "focus_tips": "string",
+        "calendar_event_created": "boolean"
+      }
+    ],
+    "total_study_hours": "number",
+    "subjects_covered": [
+      {
+        "subject": "string",
+        "hours_allocated": "number",
+        "sessions_count": "number"
+      }
+    ],
+    "balance_score": "number",
+    "plan_summary": "string",
+    "recommendations": [
+      "string"
+    ]
+  },
+  "example_response": {
+    "week_start": "sample string",
+    "week_end": "sample string",
+    "study_blocks": [
+      {
+        "id": "sample string",
+        "subject": "sample string",
+        "day": "sample string",
+        "start_time": "sample string",
+        "end_time": "sample string",
+        "duration_minutes": 0,
+        "difficulty": 0,
+        "energy_match": "sample string",
+        "focus_tips": "sample string",
+        "calendar_event_created": false
+      }
+    ],
+    "total_study_hours": 0,
+    "subjects_covered": [
+      {
+        "subject": "sample string",
+        "hours_allocated": 0,
+        "sessions_count": 0
+      }
+    ],
+    "balance_score": 0,
+    "plan_summary": "sample string",
+    "recommendations": [
+      "sample string"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "app_name": "StudySync AI",
+  "created_at": "2026-02-21T07:45:00Z",
+  "status": "active",
+  "agent_ids": {
+    "calendar_analyzer": "69996257deebc613f158650f",
+    "workload_optimizer": "6999624472a2e3b0eaab97a8",
+    "study_plan_coordinator": "6999627e72a2e3b0eaab97be",
+    "deadline_goals_tracker": "6999627f2361782dde9da339"
+  },
+  "manager_agent_id": "6999627e72a2e3b0eaab97be",
+  "sub_agent_ids": [
+    "69996257deebc613f158650f",
+    "6999624472a2e3b0eaab97a8"
+  ],
+  "independent_agent_ids": [
+    "6999627f2361782dde9da339"
+  ],
+  "schedule_ids": {
+    "deadline_goals_tracker_daily": "69996287399dfadeac37e2c6"
+  },
+  "schedules": {
+    "deadline_goals_tracker_daily": {
+      "schedule_id": "69996287399dfadeac37e2c6",
+      "agent_id": "6999627f2361782dde9da339",
+      "agent_name": "Deadline & Goals Tracker Agent",
+      "cron_expression": "0 8 * * *",
+      "timezone": "America/New_York",
+      "description": "Daily at 8:00 AM ET - Morning deadline briefing and goal progress check",
+      "is_active": true,
+      "next_run_time": "2026-02-21T08:00:00-05:00"
+    }
+  },
+  "tools_used": {
+    "composio": [
+      "GOOGLECALENDAR_LIST_CALENDARS",
+      "GOOGLECALENDAR_FIND_FREE_SLOTS",
+      "GOOGLECALENDAR_FIND_EVENT",
+      "GOOGLECALENDAR_CREATE_EVENT",
+      "GOOGLECALENDAR_LIST_EVENTS"
+    ]
+  },
+  "workflow_pattern": "manager-subagent + independent",
+  "provider": "openai",
+  "model": "gpt-4.1"
+}
